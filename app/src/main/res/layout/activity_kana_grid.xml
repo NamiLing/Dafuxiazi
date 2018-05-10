@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".KanaGrid">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorPrimary">
+
+        <TextView
+            android:id="@+id/kanagrid_pingjia"
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:padding="10dp"
+            android:text="平假"
+            android:textAlignment="center"
+            android:textColor="#fff"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"/>
+        <TextView
+            android:id="@+id/kanagrid_pianjia"
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:textAlignment="center"
+            android:padding="10dp"
+            android:text="片假名"
+            android:textColor="#fff"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"/>
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/kanagrid_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_margin="60dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary">
+
+        <TextView
+            android:id="@+id/kanagrid_qingyin"
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:padding="10dp"
+            android:text="清音"
+            android:textAlignment="center"
+            android:textColor="#fff"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"/>
+        <TextView
+            android:id="@+id/kanagrid_zhuoyin"
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:textAlignment="center"
+            android:padding="10dp"
+            android:text="浊音"
+            android:textColor="#fff"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"/>
+        <TextView
+            android:id="@+id/kanagrid_niuyin"
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:textAlignment="center"
+            android:padding="10dp"
+            android:text="拗音"
+            android:textColor="#fff"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"/>
+    </LinearLayout>
+
+</RelativeLayout>
