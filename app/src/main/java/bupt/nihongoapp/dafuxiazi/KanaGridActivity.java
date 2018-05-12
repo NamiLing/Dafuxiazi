@@ -1,15 +1,17 @@
 package bupt.nihongoapp.dafuxiazi;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class KanaGrid extends AppCompatActivity {
+public class KanaGridActivity extends AppCompatActivity {
 
     private String TAG = "Acivtity_KanaGrid";
     private String[] hiragana_qing;
@@ -29,6 +31,7 @@ public class KanaGrid extends AppCompatActivity {
     private TextView tv_qingyin;
     private TextView tv_zhuoyin;
     private TextView tv_niuyin;
+    private Toolbar mToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +39,7 @@ public class KanaGrid extends AppCompatActivity {
         setContentView(R.layout.activity_kana_grid);
 
         initKanaData();
+        mToolbar = findViewById(R.id.kanagrid_toolbar);
         tv_kanaping = findViewById(R.id.kanagrid_pingjia);
         tv_kanapian = findViewById(R.id.kanagrid_pianjia);
         tv_zhuoyin = findViewById(R.id.kanagrid_zhuoyin);
@@ -90,7 +94,7 @@ public class KanaGrid extends AppCompatActivity {
                 if (qing_zhuo_niu != 0){
                     if (qing_zhuo_niu == 2){
                         linespan = 6;
-                        rcyc_kanagrid.setLayoutManager(new GridLayoutManager(KanaGrid.this, linespan));
+                        rcyc_kanagrid.setLayoutManager(new GridLayoutManager(KanaGridActivity.this, linespan));
                     }
                     qing_zhuo_niu = 0;
                     switch (ping_pian){
@@ -111,7 +115,7 @@ public class KanaGrid extends AppCompatActivity {
                 if (qing_zhuo_niu != 1){
                     if (qing_zhuo_niu == 2){
                         linespan = 6;
-                        rcyc_kanagrid.setLayoutManager(new GridLayoutManager(KanaGrid.this, linespan));
+                        rcyc_kanagrid.setLayoutManager(new GridLayoutManager(KanaGridActivity.this, linespan));
                     }
                     qing_zhuo_niu = 1;
                     switch (ping_pian){
@@ -131,7 +135,7 @@ public class KanaGrid extends AppCompatActivity {
             public void onClick(View view) {
                 if (qing_zhuo_niu!=2){
                     linespan = 4;
-                    rcyc_kanagrid.setLayoutManager(new GridLayoutManager(KanaGrid.this, linespan));
+                    rcyc_kanagrid.setLayoutManager(new GridLayoutManager(KanaGridActivity.this, linespan));
                     qing_zhuo_niu = 2;
                     switch (ping_pian){
                         case 0:
@@ -161,9 +165,33 @@ public class KanaGrid extends AppCompatActivity {
             public void onItemClick(View view, int position) {
                 // TODO: 5/11/18  补充监听事件，发音还是Start Activity
                 if (position%linespan == linespan-1){
-                    Toast.makeText(KanaGrid.this, "Start new", Toast.LENGTH_SHORT).show();
+                    // Start new Activity
+                    Intent intent = new Intent(KanaGridActivity.this, KanaStudyActivity.class);
+                    intent.putExtra("qing_zhuo_niu", qing_zhuo_niu);
+                    intent.putExtra("ping_pian", ping_pian);
+                    String[] ping = new String[linespan-1];
+                    String[] pian = new String[linespan-1];// 传入下一个界面的参数
+                    int line = position/linespan;
+                    switch (qing_zhuo_niu){
+                        case 0: // 清音，传入十个数据
+                            System.arraycopy(hiragana_qing, line*linespan, ping, 0, linespan-1);
+                            System.arraycopy(katagana_qing, line*linespan, ping, 0, linespan-1);
+                            break;
+                        case 1:
+                            System.arraycopy(hiragana_zhuo, line*linespan, ping, 0, linespan-1);
+                            System.arraycopy(katagana_zhuo, line*linespan, ping, 0, linespan-1);
+                            break;
+                        case 3:
+                            System.arraycopy(hiragana_niu, line*linespan, ping, 0, linespan-1);
+                            System.arraycopy(katagana_niu, line*linespan, ping, 0, linespan-1);
+                            break;
+                    }
+                    intent.putExtra("ping", ping);
+                    intent.putExtra("pian", pian);
+                    KanaGridActivity.this.startActivity(intent);
+
                 }else {
-                    Toast.makeText(KanaGrid.this, "发音", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(KanaGridActivity.this, "发音", Toast.LENGTH_SHORT).show();
                 }
             }
         });

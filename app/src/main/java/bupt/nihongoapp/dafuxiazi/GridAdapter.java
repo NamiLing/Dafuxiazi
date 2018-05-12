@@ -2,20 +2,17 @@ package bupt.nihongoapp.dafuxiazi;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
-import bupt.nihongoapp.dafuxiazi.R;
 
 public class GridAdapter extends RecyclerView.Adapter<GridAdapter.GridHolder>{
 
     private String TAG = "Acivtity_KanaGrid";
     private String[] mkana;
     private LayoutInflater mInflater;
-    private KanaGrid.OnItemClickListener mOnItemClickListener;
+    private KanaGridActivity.OnItemClickListener mOnItemClickListener;
 
     // data is passed into constructor
     public GridAdapter(Context context, String[] kana) {
@@ -65,7 +62,7 @@ public class GridAdapter extends RecyclerView.Adapter<GridAdapter.GridHolder>{
      *
      * @param listener
      */
-    public void setOnItemClickListener(KanaGrid.OnItemClickListener listener) {
+    public void setOnItemClickListener(KanaGridActivity.OnItemClickListener listener) {
         mOnItemClickListener = listener;
     }
 

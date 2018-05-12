@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/kanastudy_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:theme="@style/Theme.AppCompat.NoActionBar"
+        >
+        <TextView
+            android:id="@+id/kanastudy_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="#fff"
+            android:text="あ行"/>
+    </android.support.v7.widget.Toolbar>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorPrimary">
+
+        <TextView
+            android:id="@+id/kanastudy_pingjia"
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:padding="10dp"
+            android:text="平假"
+            android:textAlignment="center"
+            android:textColor="#fff"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"/>
+        <TextView
+            android:id="@+id/kanastudy_pianjia"
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:textAlignment="center"
+            android:padding="10dp"
+            android:text="片假名"
+            android:textColor="#fff"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimaryDark">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:background="@color/colorPrimaryTransparent">
+
+            <TextView
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:padding="10dp"
+                android:text="あ"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:focusable="true"/>
+            <TextView
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:textAlignment="center"
+                android:padding="10dp"
+                android:text="い"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:focusable="true"/>
+            <TextView
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:textAlignment="center"
+                android:padding="10dp"
+                android:text="う"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:focusable="true"/>
+            <TextView
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:textAlignment="center"
+                android:padding="10dp"
+                android:text="え"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:focusable="true"/>
+            <TextView
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:textAlignment="center"
+                android:padding="10dp"
+                android:text="お"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:focusable="true"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerInParent="true">
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:background="#fff"
+                android:textSize="100dp"
+                android:text="あ"
+                android:gravity="center"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:layout_marginTop="10dp"
+                android:text="这是助记和发音"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorPrimaryTransparent">
+
+            <TextView
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:padding="10dp"
+                android:text="速记"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:focusable="true"/>
+            <TextView
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:textAlignment="center"
+                android:padding="10dp"
+                android:text="视频"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:focusable="true"/>
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+
+
+
+
+</LinearLayout>
